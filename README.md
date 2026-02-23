@@ -6,8 +6,7 @@ This is the Grocerya UI redesign from figma to react native
 ### and create bottom tabs
 
 1. uninstall expo router with (npm uninstall expo-router)
-2. i changed the entry in the package.json to index.js from expo router
-
+3. i created an index.js at the root folder same level with package.json
 
 
 
