@@ -11,6 +11,8 @@ This is the Grocerya UI redesign from figma to react native
 > npm install @react-navigation/native
 4. installed react native navigation dependencies
 > npx expo install react-native-screens react-native-safe-area-context
+5. installed react-navigation bottom tab
+> npm install @react-navigation/bottom-tabs
 
 
 
