@@ -69,7 +69,12 @@ function MainTabs() {
 
                     const IconComponent = icons[route.name as keyof typeof icons];
                     return (
-                        <View style={styles.TabContainer} >
+                        <View
+                            style={[
+                                styles.TabContainer,
+                                focused && styles.activeTab
+
+                            ]}>
                             <IconComponent
                                 width={size}
                                 height={size}
@@ -124,8 +129,13 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
 
     },
+    activeTab: {
+        backgroundColor: '#EEEEEE',
+    },
 
     TabText: {
+        fontSize: 16,
+        fontWeight: 500,
 
     }
 })
