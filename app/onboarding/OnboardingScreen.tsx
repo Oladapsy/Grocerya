@@ -8,22 +8,23 @@ import {
   View,
 } from "react-native";
 import React, { useRef, useState } from "react";
-import { useRouter } from "expo-router";
 import { slides } from "@/assets/constants/slides";
+import { useNavigation } from "@react-navigation/native";
 
 const { width } = Dimensions.get("window");
+
 
 
 const OnboardingScreen = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const flatListRef = useRef<FlatList>(null);
-  const router = useRouter();
+  const navigation = useNavigation<any>();
 
   const handleNext = () => {
     if (currentIndex < slides.length - 1) {
       flatListRef.current?.scrollToIndex({ index: currentIndex + 1 });
     } else {
-      router.push("/login")
+      navigation.navigate("login");
     }
   };
 

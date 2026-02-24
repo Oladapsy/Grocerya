@@ -1,21 +1,21 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import CategorySelector from '../components/onboarding/CategorySelector';
-import HeaderText from '../components/onboarding/HeaderText';
-import PrimaryButton from '../components/onboarding/PrimaryButton';
-import ScreenHeader from '../components/onboarding/ScreenHeader';
-import { useRouter } from 'expo-router';
+import CategorySelector from '@/components/onboarding/CategorySelector';
+import HeaderText from '@/components/onboarding/HeaderText';
+import PrimaryButton from '@/components/onboarding/PrimaryButton';
+import ScreenHeader from '@/components/onboarding/ScreenHeader';
+import { useNavigation } from "@react-navigation/native";
 import { categories } from '@/assets/constants/categories';
 
 const SelectCategoryScreen = () => {
 
-    const router = useRouter();
+    const navigation = useNavigation<any>();
 
     const handleContinue = () => {
         console.log("Next Stage Maps/ Location");
 
-        router.push('/location');
+        navigation.navigate("location");
     };
     return (
         <SafeAreaView style={styles.safeArea}>

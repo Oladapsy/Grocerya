@@ -1,7 +1,7 @@
 import HeaderText from '@/components/onboarding/HeaderText'
 import PrimaryButton from '@/components/onboarding/PrimaryButton'
 import ScreenHeader from '@/components/onboarding/ScreenHeader'
-import { useRouter } from 'expo-router';
+import { useNavigation } from "@react-navigation/native";
 import React from 'react';
 import { StyleSheet, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -10,11 +10,11 @@ import SecondaryButton from '@/components/onboarding/SecondaryButton';
 
 const NotificationScreen = () => {
 
-    const router = useRouter();
+    const navigation = useNavigation<any>();
 
     const handleContinue = () => {
         console.log("Final stage next notification");
-        router.push('/notification');
+        navigation.navigate("main");
     }
     return (
         <SafeAreaView style={styles.safeArea}>
@@ -38,7 +38,7 @@ const NotificationScreen = () => {
                 {/* button */}
                 <View style={{ marginBottom: 10 }}>
                     <PrimaryButton text='Enable Notifications' onPress={handleContinue} />
-                    <SecondaryButton text='Skip For Now' onpress={console.log("Skip for now pressed")} />
+                    <SecondaryButton text='Skip For Now' onpress={handleContinue} />
                 </View>
             </View>
 

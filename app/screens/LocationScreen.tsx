@@ -1,20 +1,20 @@
 import PrimaryButton from '@/components/onboarding/PrimaryButton'
 import ScreenHeader from '@/components/onboarding/ScreenHeader'
-import { useRouter } from 'expo-router';
 import React from 'react';
 import { StyleSheet, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Map from "@/assets/svg/map.svg";
 import SecondaryButton from '@/components/onboarding/SecondaryButton';
 import MapAndNotText from '@/components/onboarding/MapAndNotText';
+import { useNavigation } from "@react-navigation/native";
 
 const LocationScreen = () => {
 
-    const router = useRouter();
+    const navigation = useNavigation<any>();
 
     const handleContinue = () => {
         console.log("Final stage next notification");
-        router.push('/notification');
+        navigation.navigate("notification");
     }
     return (
         <SafeAreaView style={styles.safeArea}>

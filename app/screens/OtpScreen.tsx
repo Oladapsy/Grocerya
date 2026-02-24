@@ -1,23 +1,21 @@
-import { useRouter } from "expo-router";
 import HeaderText from '@/components/onboarding/HeaderText';
 import OtpInput from '@/components/onboarding/OTPInput';
 import PrimaryButton from '@/components/onboarding/PrimaryButton';
 import ScreenHeader from '@/components/onboarding/ScreenHeader';
+import { useNavigation } from "@react-navigation/native";
 import React from 'react';
 import { View, StyleSheet, KeyboardAvoidingView, Text, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 
-interface OtpScreenProps {
-  phone: string;
-}
 
-const OtpScreen = ({ phone }: OtpScreenProps) => {
-  const router = useRouter();
+
+const OtpScreen = () => {
+  const navigation = useNavigation<any>();
 
   const handleContinue = () => {
     console.log("You're in, you made it!!!");
-    router.push('/category');
+    navigation.navigate("category");
   };
 
 
@@ -42,7 +40,7 @@ const OtpScreen = ({ phone }: OtpScreenProps) => {
             />
 
             {/* Phone label */}
-            <Text style={styles.label}>{phone}</Text>
+            <Text style={styles.label}>0906748493</Text>
 
             <OtpInput
               length={5}

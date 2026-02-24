@@ -14,7 +14,7 @@ import HeaderText from "@/components/onboarding/HeaderText";
 import PrimaryButton from "@/components/onboarding/PrimaryButton";
 import { COUNTRIES } from "@/assets/constants/countryData";
 import InputField from "@/components/onboarding/InputField";
-import { useRouter } from "expo-router";
+import { useNavigation } from "@react-navigation/native";
 import ScreenHeader from "@/components/onboarding/ScreenHeader";
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -26,7 +26,7 @@ const LoginScreen = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [selected, setSelected] = useState<Country>(COUNTRIES[0]);
   const [phoneNumber, setPhoneNumber] = useState<string>("");
-  const router = useRouter();
+  const navigation = useNavigation<any>();
 
 
   const handleSelectCountry = (country: Country) => {
@@ -38,7 +38,7 @@ const LoginScreen = () => {
     const fullNumber = `${selected.code}${phoneNumber}`;
     console.log("Sending OTP to:", fullNumber);
 
-    router.push(`/Otp?phone=${encodeURIComponent(fullNumber)}`);
+    navigation.navigate("otp", { phone: fullNumber });
   };
 
 
