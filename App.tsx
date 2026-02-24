@@ -19,7 +19,14 @@ import CartScreen from '@/app/tabs/CartScreen';
 import FavouriteScreen from '@/app/tabs/FavouriteScreen';
 import ProfileScreen from '@/app/tabs/ProfileScreen';
 
+// icons
+import HomeIcon from '@/assets/svg/tab/home.svg';
+import CartIcon from '@/assets/svg/tab/cart.svg';
+import FavouriteIcon from '@/assets/svg/tab/favourite.svg';
+import ProfileIcon from '@/assets/svg/tab/profile.svg';
 
+// view and text for the icon and the style
+import { View, Text, StyleSheet } from 'react-native';
 
 // type the screens for stack
 type RootStackParamList = {
@@ -39,16 +46,45 @@ const Tab = createBottomTabNavigator();
 function MainTabs() {
     return (
         <Tab.Navigator
-        backBehavior='firstRoute'
-        screenOptions={({ route }) => ({
-            headerShown: false,
-            tabBarShowLabel: false,
-            tabBarStyle: {
-                backgroundColor: '#FFFFFF',
-                height: 84,  
-            },
-        }
-    )}
+
+            backBehavior='firstRoute'
+
+            screenOptions={({ route }) => ({
+                headerShown: false,
+                tabBarShowLabel: false,
+                tabBarActiveTintColor: "#0D0D0D",
+                tabBarInactiveTintColor: "#CCCCCC",
+                tabBarStyle: {
+                    backgroundColor: '#FFFFFF',
+                    padding: 8,
+                    height: 84,
+                },
+                tabBarIcon: ({ focused, color, size }) => {
+                    const icons = {
+                        Home: HomeIcon,
+                        Cart: CartIcon,
+                        Favourite: FavouriteIcon,
+                        Profile: ProfileIcon,
+                    } as const;
+
+                    const IconComponent = icons[route.name as keyof typeof icons];
+                    return (
+                        <View style={styles.TabContainer} >
+                            <IconComponent
+                                width={size}
+                                height={size}
+                                color={color}
+                            />
+                            {focused && (
+                                <Text style={styles.TabText}>
+                                    {route.name}
+                                </Text>
+                            )}
+                        </View>
+                    );
+                }
+            }
+            )}
         >
             <Tab.Screen name="Home" component={HomeScreen} />
             <Tab.Screen name="Cart" component={CartScreen} />
@@ -80,3 +116,16 @@ export default function App() {
         </NavigationContainer>
     );
 }
+
+const styles = StyleSheet.create({
+    TabContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+
+    },
+
+    TabText: {
+
+    }
+})
