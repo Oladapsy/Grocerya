@@ -7,6 +7,9 @@ This is the Grocerya UI redesign from figma to react native
 
 1. uninstall expo router with (npm uninstall expo-router)
 3. i created an index.js at the root folder same level with package.json
+3. installation of react navigation from doc
+> npm install @react-navigation/native
+> 
 
 
 
