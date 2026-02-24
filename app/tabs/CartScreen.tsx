@@ -9,7 +9,6 @@ const CartScreen = () => {
                 <Text>Cart Screen</Text>
             </SafeAreaView>
         </SafeAreaProvider>
-
     )
 }
 
