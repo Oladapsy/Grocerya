@@ -6,7 +6,7 @@ const HomeScreen = () => {
     return (
         <SafeAreaProvider>
             <SafeAreaView style={styles.container}>
-                <Text>Home Screen</Text>
+                <Text style={styles.text}>Home Screen</Text>
             </SafeAreaView>
         </SafeAreaProvider>
 
@@ -16,8 +16,14 @@ const HomeScreen = () => {
 
 const styles = StyleSheet.create({
 
-    container: {
-        flex: 1
+     container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    text: {
+         fontSize: 30,
+        fontFamily: "Poppins_500Medium",
     }
 })
 

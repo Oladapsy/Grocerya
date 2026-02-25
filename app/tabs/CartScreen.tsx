@@ -6,7 +6,7 @@ const CartScreen = () => {
     return (
         <SafeAreaProvider>
             <SafeAreaView style={styles.container}>
-                <Text>Cart Screen</Text>
+                <Text style={styles.text}>Cart Screen</Text>
             </SafeAreaView>
         </SafeAreaProvider>
     )
@@ -14,9 +14,14 @@ const CartScreen = () => {
 
 
 const styles = StyleSheet.create({
-
     container: {
-        flex: 1
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    text: {
+         fontSize: 30,
+        fontFamily: "Poppins_500Medium",
     }
 })
 

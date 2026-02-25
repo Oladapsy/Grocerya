@@ -6,7 +6,7 @@ const FavouriteScreen = () => {
     return (
         <SafeAreaProvider>
             <SafeAreaView style={styles.container}>
-                <Text>Favourite Screen</Text>
+                <Text style={styles.text}>Favourite Screen</Text>
             </SafeAreaView>
         </SafeAreaProvider>
 
@@ -16,8 +16,14 @@ const FavouriteScreen = () => {
 
 const styles = StyleSheet.create({
 
-    container: {
-        flex: 1
+     container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    text: {
+         fontSize: 30,
+        fontFamily: "Poppins_500Medium",
     }
 })
 
