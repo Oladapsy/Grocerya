@@ -127,15 +127,19 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
+        gap: 6,
 
     },
     activeTab: {
         backgroundColor: '#EEEEEE',
+        borderRadius: 10,
+       
     },
 
     TabText: {
         fontSize: 16,
         fontWeight: 500,
+        color: '#0D0D0D',
 
     }
 })
