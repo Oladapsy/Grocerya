@@ -2,7 +2,7 @@ import HeaderText from '@/components/onboarding/HeaderText';
 import OtpInput from '@/components/onboarding/OTPInput';
 import PrimaryButton from '@/components/onboarding/PrimaryButton';
 import ScreenHeader from '@/components/onboarding/ScreenHeader';
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import React from 'react';
 import { View, StyleSheet, KeyboardAvoidingView, Text, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -12,6 +12,11 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 const OtpScreen = () => {
   const navigation = useNavigation<any>();
+
+  const route = useRoute<any>();
+
+   /* 2. Get the param */
+  const { phone } = route.params;
 
   const handleContinue = () => {
     console.log("You're in, you made it!!!");
@@ -40,7 +45,7 @@ const OtpScreen = () => {
             />
 
             {/* Phone label */}
-            <Text style={styles.label}>0906748493</Text>
+            <Text style={styles.label}>{phone}</Text>
 
             <OtpInput
               length={5}
