@@ -20,7 +20,7 @@ const OtpScreen = () => {
 
   const handleContinue = () => {
     console.log("You're in, you made it!!!");
-    navigation.navigate("category");
+    navigation.navigate("Category");
   };
 
 

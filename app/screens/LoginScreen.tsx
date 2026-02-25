@@ -38,7 +38,7 @@ const LoginScreen = () => {
     const fullNumber = `${selected.code}${phoneNumber}`;
     console.log("Sending OTP to:", fullNumber);
 
-    navigation.navigate("otp", { phone: fullNumber });
+    navigation.navigate("Otp", { phone: fullNumber });
   };
 
 

@@ -14,7 +14,7 @@ const LocationScreen = () => {
 
     const handleContinue = () => {
         console.log("Final stage next notification");
-        navigation.navigate("notification");
+        navigation.navigate("Notification");
     }
     return (
         <SafeAreaView style={styles.safeArea}>

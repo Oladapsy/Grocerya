@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+
 // The auth screen! 
 import OnboardingScreen from '@/app/onboarding/OnboardingScreen';
 
@@ -30,13 +31,13 @@ import { View, Text, StyleSheet } from 'react-native';
 
 // type the screens for stack
 type RootStackParamList = {
-    onboarding: undefined;
-    login: undefined;
-    otp: undefined;
-    category: undefined;
-    location: undefined;
-    notification: undefined;
-    main: undefined;
+    Onboarding: undefined;
+    Login: undefined;
+    Otp: undefined;
+    Category: undefined;
+    Location: undefined;
+    Notification: undefined;
+    Main: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -56,10 +57,11 @@ function MainTabs() {
                 tabBarInactiveTintColor: "#CCCCCC",
                 tabBarStyle: {
                     backgroundColor: '#FFFFFF',
-                    padding: 8,
+                    paddingHorizontal: 34,
                     height: 84,
+                    paddingTop: 20,
                 },
-                tabBarIcon: ({ focused, color, size }) => {
+                tabBarIcon: ({ focused, color, size: _ }) => {
                     const icons = {
                         Home: HomeIcon,
                         Cart: CartIcon,
@@ -76,8 +78,8 @@ function MainTabs() {
 
                             ]}>
                             <IconComponent
-                                width={size}
-                                height={size}
+                                width={20}
+                                height={20}
                                 color={color}
                             />
                             {focused && (
@@ -101,14 +103,14 @@ function MainTabs() {
 
 function MyStack() {
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='onboarding'>
-            <Stack.Screen name='onboarding' component={OnboardingScreen} />
-            <Stack.Screen name='login' component={LoginScreen} />
-            <Stack.Screen name='otp' component={OtpScreen} />
-            <Stack.Screen name='category' component={SelectCategoryScreen} />
-            <Stack.Screen name='location' component={LocationScreen} />
-            <Stack.Screen name='notification' component={NotificationScreen} />
-            <Stack.Screen name='main' component={MainTabs} />
+        <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Onboarding'>
+            <Stack.Screen name='Onboarding' component={OnboardingScreen} />
+            <Stack.Screen name='Login' component={LoginScreen} />
+            <Stack.Screen name='Otp' component={OtpScreen} />
+            <Stack.Screen name='Category' component={SelectCategoryScreen} />
+            <Stack.Screen name='Location' component={LocationScreen} />
+            <Stack.Screen name='Notification' component={NotificationScreen} />
+            <Stack.Screen name='Main' component={MainTabs} />
         </Stack.Navigator>
     )
 }
@@ -123,22 +125,30 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+
     TabContainer: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
         gap: 6,
+        paddingVertical: 8,
+        paddingHorizontal: 16,
+        minWidth: 100,
+        minHeight: 40,
 
     },
     activeTab: {
         backgroundColor: '#EEEEEE',
         borderRadius: 10,
-       
+        paddingVertical: 0,
+        paddingHorizontal: 0,
+
+
     },
 
     TabText: {
-        fontSize: 16,
-        fontWeight: 500,
+        fontSize: 14,
+        fontWeight: '500',
         color: '#0D0D0D',
 
     }

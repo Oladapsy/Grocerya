@@ -15,7 +15,7 @@ const SelectCategoryScreen = () => {
     const handleContinue = () => {
         console.log("Next Stage Maps/ Location");
 
-        navigation.navigate("location");
+        navigation.navigate("Location");
     };
     return (
         <SafeAreaView style={styles.safeArea}>
