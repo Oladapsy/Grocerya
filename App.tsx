@@ -2,6 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+// import drawer
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 
@@ -43,6 +44,7 @@ type RootStackParamList = {
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
 
 // the main tabs screen
 function MainTabs() {
