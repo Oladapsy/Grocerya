@@ -42,9 +42,23 @@ export type RootStackParamList = {
     Main: undefined;
 };
 
+// type the drawer param
+export type DrawerParamList = {
+    MainTab: undefined;
+}
+
+// type bottom tab param
+export type BottomTabParamList = {
+    Home: undefined;
+    Cart: undefined;
+    Favourite: undefined;
+    Profile: undefined;
+};
+
+
 const Stack = createNativeStackNavigator<RootStackParamList>();
-const Tab = createBottomTabNavigator();
-const Drawer = createDrawerNavigator();
+const Tab = createBottomTabNavigator<BottomTabParamList>();
+const Drawer = createDrawerNavigator<DrawerParamList>();
 
 // the drawer function
 function MyDrawer() {
