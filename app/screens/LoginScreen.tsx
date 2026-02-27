@@ -16,7 +16,7 @@ import { COUNTRIES } from "@/assets/constants/countryData";
 import InputField from "@/components/onboarding/InputField";
 import { useNavigation } from "@react-navigation/native";
 import ScreenHeader from "@/components/onboarding/ScreenHeader";
-import { SafeAreaView } from 'react-native-safe-area-context';
+import MySafeAreaView from "@/components/onboarding/MySafeAreaView";
 
 
 
@@ -43,7 +43,7 @@ const LoginScreen = () => {
 
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <MySafeAreaView>
       <KeyboardAvoidingView
         style={styles.safeArea}
         behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -125,7 +125,7 @@ const LoginScreen = () => {
           </View>
         </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
-    </SafeAreaView>
+    </MySafeAreaView>
   );
 };
 

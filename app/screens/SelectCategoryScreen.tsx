@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import CategorySelector from '@/components/onboarding/CategorySelector';
 import HeaderText from '@/components/onboarding/HeaderText';
 import PrimaryButton from '@/components/onboarding/PrimaryButton';
 import ScreenHeader from '@/components/onboarding/ScreenHeader';
 import { useNavigation } from "@react-navigation/native";
 import { categories } from '@/assets/constants/categories';
+import MySafeAreaView from '@/components/onboarding/MySafeAreaView';
 
 const SelectCategoryScreen = () => {
 
@@ -18,7 +18,7 @@ const SelectCategoryScreen = () => {
         navigation.navigate("Location");
     };
     return (
-        <SafeAreaView style={styles.safeArea}>
+        <MySafeAreaView>
             <View style={styles.container}>
                 {/* ── Help and back icon ───*/}
                 <ScreenHeader showHelp={true} showBack={true} />
@@ -34,16 +34,13 @@ const SelectCategoryScreen = () => {
                 {/* button */}
                 <PrimaryButton text='Continue' onPress={handleContinue} />
             </View>
-        </SafeAreaView>
+        </MySafeAreaView>
 
     )
 }
 
 
 const styles = StyleSheet.create({
-    safeArea: {
-        flex: 1,
-    },
     container: {
         flex: 1,
         backgroundColor: "#FFFFFF",

@@ -4,9 +4,9 @@ import ScreenHeader from '@/components/onboarding/ScreenHeader'
 import { useNavigation } from "@react-navigation/native";
 import React from 'react';
 import { StyleSheet, View } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context';
 import Notification from "@/assets/svg/notification.svg";
 import SecondaryButton from '@/components/onboarding/SecondaryButton';
+import MySafeAreaView from '@/components/onboarding/MySafeAreaView';
 
 const NotificationScreen = () => {
 
@@ -17,7 +17,7 @@ const NotificationScreen = () => {
         navigation.navigate("Main");
     }
     return (
-        <SafeAreaView style={styles.safeArea}>
+        <MySafeAreaView>
             <View style={styles.container}>
 
                 {/* ── Help and back icon ───*/}
@@ -43,14 +43,11 @@ const NotificationScreen = () => {
             </View>
 
 
-        </SafeAreaView>
+        </MySafeAreaView>
     )
 }
 
 const styles = StyleSheet.create({
-    safeArea: {
-        flex: 1
-    },
     container: {
         flex: 1,
         paddingHorizontal: 20,

@@ -32,7 +32,7 @@ import ProfileIcon from '@/assets/svg/tab/profile.svg';
 import { View, Text, StyleSheet } from 'react-native';
 
 // type the screens for stack
-type RootStackParamList = {
+export type RootStackParamList = {
     Onboarding: undefined;
     Login: undefined;
     Otp: undefined;
@@ -45,6 +45,19 @@ type RootStackParamList = {
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
+
+// the drawer function
+function MyDrawer() {
+    return (
+        <Drawer.Navigator
+        screenOptions={{
+            headerShown: false,
+        }}>
+            <Drawer.Screen name='MainTab' component={MainTabs} />
+        </Drawer.Navigator>
+    )
+}
+
 
 // the main tabs screen
 function MainTabs() {
@@ -113,7 +126,7 @@ function MyStack() {
             <Stack.Screen name='Category' component={SelectCategoryScreen} />
             <Stack.Screen name='Location' component={LocationScreen} />
             <Stack.Screen name='Notification' component={NotificationScreen} />
-            <Stack.Screen name='Main' component={MainTabs} />
+            <Stack.Screen name='Main' component={MyDrawer} />
         </Stack.Navigator>
     )
 }

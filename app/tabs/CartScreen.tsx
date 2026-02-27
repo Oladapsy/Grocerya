@@ -1,26 +1,24 @@
+import MySafeAreaView from '@/components/onboarding/MySafeAreaView'
 import React from 'react'
 import { Text, StyleSheet } from 'react-native'
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 
 const CartScreen = () => {
     return (
-        <SafeAreaProvider>
-            <SafeAreaView style={styles.container}>
-                <Text style={styles.text}>Cart Screen</Text>
-            </SafeAreaView>
-        </SafeAreaProvider>
+        <MySafeAreaView style={styles.container}>
+            <Text style={styles.text}>Cart Screen</Text>
+        </MySafeAreaView>
     )
 }
 
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: 'white',
     },
     text: {
-         fontSize: 30,
+        fontSize: 30,
         fontFamily: "Poppins_500Medium",
     }
 })

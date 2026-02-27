@@ -1,11 +1,11 @@
 import HeaderText from '@/components/onboarding/HeaderText';
+import MySafeAreaView from '@/components/onboarding/MySafeAreaView';
 import OtpInput from '@/components/onboarding/OTPInput';
 import PrimaryButton from '@/components/onboarding/PrimaryButton';
 import ScreenHeader from '@/components/onboarding/ScreenHeader';
 import { useNavigation, useRoute } from "@react-navigation/native";
 import React from 'react';
 import { View, StyleSheet, KeyboardAvoidingView, Text, Platform } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 
@@ -25,7 +25,7 @@ const OtpScreen = () => {
 
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <MySafeAreaView>
 
       <KeyboardAvoidingView
         style={styles.safeArea}
@@ -60,7 +60,7 @@ const OtpScreen = () => {
             <Text style={styles.innerTermText}> Privacy Policy</Text></Text>
         </View>
       </KeyboardAvoidingView>
-    </SafeAreaView>
+    </MySafeAreaView>
   )
 }
 
