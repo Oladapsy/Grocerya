@@ -24,7 +24,7 @@
       "package": "com.anonymous.Grocerya"
     },
     "web": {
-      "output": "static",
+      "output": "single",
       "favicon": "./assets/images/favicon.png"
     },
     "splash": {
@@ -36,7 +36,6 @@
           }
     },
     "plugins": [
-      "expo-router",
       [
         "expo-splash-screen",
         {
