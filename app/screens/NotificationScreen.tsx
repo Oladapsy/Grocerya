@@ -1,0 +1,69 @@
+import HeaderText from '@/components/onboarding/HeaderText'
+import PrimaryButton from '@/components/onboarding/PrimaryButton'
+import ScreenHeader from '@/components/onboarding/ScreenHeader'
+import { useNavigation } from "@react-navigation/native";
+import React from 'react';
+import { StyleSheet, View } from 'react-native'
+import Notification from "@/assets/svg/notification.svg";
+import SecondaryButton from '@/components/onboarding/SecondaryButton';
+import MySafeAreaView from '@/components/onboarding/MySafeAreaView';
+
+const NotificationScreen = () => {
+
+    const navigation = useNavigation<any>();
+
+    const handleContinue = () => {
+        console.log("Final stage next notification");
+        navigation.navigate("Main");
+    }
+    return (
+        <MySafeAreaView>
+            <View style={styles.container}>
+
+                {/* ── Help and back icon ───*/}
+                <ScreenHeader showHelp={true} showBack={true} />
+
+                <View style={styles.mainText}>
+
+                    {/* header */}
+                    <HeaderText
+                        title='Lastly, please enable notification'
+                        subtitle='Enable your notifications for more update and important messages about your grocery needs' />
+
+                    {/* image */}
+                    <Notification width={200} height={200} style={styles.image} />
+
+                </View>
+
+                {/* button */}
+                <View style={{ marginBottom: 10 }}>
+                    <PrimaryButton text='Enable Notifications' onPress={handleContinue} />
+                    <SecondaryButton text='Skip For Now' onpress={handleContinue} />
+                </View>
+            </View>
+
+
+        </MySafeAreaView>
+    )
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        paddingHorizontal: 20,
+        backgroundColor: "#FFFFFF",
+    },
+    mainText: {
+        flex: 1,
+        marginTop: 40,
+        alignItems: "center",
+    },
+    image: {
+        marginTop: 80,
+        justifyContent: "center",
+        alignItems: "center",
+    }
+
+})
+
+export default NotificationScreen;

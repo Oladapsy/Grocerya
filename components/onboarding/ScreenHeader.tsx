@@ -1,6 +1,6 @@
 import React from "react";
 import { View, TouchableOpacity, StyleSheet } from "react-native";
-import { useRouter } from "expo-router";
+import { useNavigation } from "@react-navigation/native";
 import QuestionMark from "@/assets/svg/question.svg";
 import Back from "@/assets/svg/back.svg";
 
@@ -15,14 +15,14 @@ const ScreenHeader = ({
     showHelp = true,
     onHelpPress,
 }: ScreenHeaderProps) => {
-    const router = useRouter();
+    const navigation = useNavigation<any>();
 
     return (
         <View style={styles.container}>
             {/* Left */}
             <View style={styles.left}>
                 {showBack && (
-                    <TouchableOpacity onPress={() => router.back()}>
+                    <TouchableOpacity onPress={() => navigation.goBack()}>
                         <Back width={19} height={19} />
                     </TouchableOpacity>
                 )}
